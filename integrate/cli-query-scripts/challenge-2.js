@@ -3,16 +3,20 @@
   logged data: that employee's last name and job title
 */
 
-const path = require('path');
-const sqlite3 = require('sqlite3').verbose();
+const path = require("path");
+const sqlite3 = require("sqlite3").verbose();
 
-const DB_PATH = path.join(__dirname, '..', 'chinook.sqlite');
+const DB_PATH = path.join(__dirname, "..", "chinook.sqlite");
 
 const db = new sqlite3.Database(DB_PATH);
 
-const userInput = {};
+const userInput = {
+  name: process.argv[2],
+};
 
-const queryString = ``;
+const queryString = `
+SELECT lastName, Title
+FROM Employee WHERE firstName = "${userInput.name}"`;
 
 db.all(queryString, (err, rows) => {
   if (err) {
@@ -23,4 +27,3 @@ db.all(queryString, (err, rows) => {
 
   db.close();
 });
-

@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "sqlite": "^4.0.9"
+    "sqlite": "^4.0.9",
+    "sqlite3": "^4.2.0"
   }
 }
